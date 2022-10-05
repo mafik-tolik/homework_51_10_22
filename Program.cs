@@ -8,24 +8,17 @@ Ex41();
 
 void Ex41()
 {
-    int sizeM = 1;
-    int[] numbers = new int[sizeM];
+    int size = 5;
+    int[] numbers = new int[size];
 
     FillArray(numbers);
 
-    void FillArray(int[] num)
+    void FillArray(int[] num1)
     {
-        for (int i = 0; i < sizeM; i++)
+        for (int i = 0; i < num1.Length; i++)
         {
-            int stop = -0;
-            Console.WriteLine($"Чтобы в дальнейшем прекратить ввод, наберите: {stop}");
-
-            while (num[i] != stop)
-            {
-                Console.WriteLine($"Введите {i + 1}-е число:");
-                num[i] = Convert.ToInt32(Console.ReadLine());
-                sizeM++;
-            }
+            Console.WriteLine($"Введите {i + 1}-ый элемент массива:");
+            num1[i] = Convert.ToInt32(Console.ReadLine());
         }
     }
 
