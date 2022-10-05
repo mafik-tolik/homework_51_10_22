@@ -2,7 +2,8 @@
 
 
 
-Ex41();
+// Ex41();
+// Ex41_1();
 // Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
 // 0, 7, 8, -2, -2 -> 2
 
@@ -38,6 +39,43 @@ void Ex41()
     LibraryHelp.Methods.PrintArray(numbers);
 
     Console.WriteLine("Количество чисел больше 0: " + GetQuantityPositiveNum(numbers) + "\n");
+}
+
+void Ex41_1()
+{
+    Console.WriteLine("Чтобы прекратить набор чисел, введите: -55555");
+
+    СountPositiv();
+
+    void СountPositiv(int countPositiv = 0)
+    {
+        int stop = -55555;
+
+        Console.WriteLine("Введите число:");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        if (number == stop)
+        {
+            Console.WriteLine($"Ввод чисел остановлен");
+            return;
+        }
+
+        else if (number > 0)
+        {
+            Console.Clear();
+            Console.WriteLine("Чтобы остановить набор чисел, введите: -55555");
+            countPositiv++;
+            Console.WriteLine($"Количество чисел больше 0: {countPositiv}");
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Чтобы остановить набор чисел, введите: -55555");
+            Console.WriteLine($"Количество чисел больше 0: {countPositiv}");
+        }
+
+        СountPositiv(countPositiv);
+    }
 }
 
 
