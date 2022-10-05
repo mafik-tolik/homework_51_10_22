@@ -8,17 +8,24 @@ Ex41();
 
 void Ex41()
 {
-    int sizeM = 5;
+    int sizeM = 1;
     int[] numbers = new int[sizeM];
 
     FillArray(numbers);
 
     void FillArray(int[] num)
     {
-        for (int i = 0; i < num.Length; i++)
+        for (int i = 0; i < sizeM; i++)
         {
-            Console.WriteLine($"Введите {i + 1}-е число:");
-            num[i] = Convert.ToInt32(Console.ReadLine());
+            int stop = -0;
+            Console.WriteLine($"Чтобы в дальнейшем прекратить ввод, наберите: {stop}");
+
+            while (num[i] != stop)
+            {
+                Console.WriteLine($"Введите {i + 1}-е число:");
+                num[i] = Convert.ToInt32(Console.ReadLine());
+                sizeM++;
+            }
         }
     }
 
@@ -42,7 +49,7 @@ void Ex41()
 
 
 
-Ex43();
+// Ex43();
 // Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
 // значения b1, k1, b2 и k2 задаются пользователем.
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
@@ -59,7 +66,7 @@ void Ex43()
     double b2 = Convert.ToInt32(Console.ReadLine());
 
     double x = (b2 - b1) / (k1 - k2);
-    double y1 = k1*x + b1;
+    double y1 = k1 * x + b1;
 
     Console.WriteLine($"Точка пересечения двух прямых: ({x}; {y1})");
 }
